@@ -39,16 +39,21 @@ Key fields used: `Product`, `Issue`, `Sub-issue`, `Consumer complaint narrative`
 - **Trend analysis** — line plots tracking products, issues, and sub-issues over time (monthly)
 - **Top reported issue combinations** — the most frequent Product + Issue + Sub-issue triples, tracked over time
 
-### 2. Product Deep-Dive
+![Top 5 issues](images/top5.png)
 
 The two largest complaint categories (Credit Cards and Checking/Savings Accounts) are separated and analysed individually, with sub-issue trends plotted over time for each.
 
 ### 3. Text Processing
 
 - **Dollar amount extraction** — regex-based extraction of monetary values from complaint narratives, aggregated monthly to show financial impact trends
+  
+![Monetary values](images/monetary.png)
+
 - **Text cleaning pipeline** — built with spaCy, including removal of CFPB masking characters, stopwords (with domain-specific additions like "chase", "bank", "credit"), punctuation, numbers, URLs, and HTML tags
 - **Word frequency analysis** — bar chart of the most common terms after cleaning
 - **Word cloud** — visual summary of the most prominent vocabulary across all complaints
+
+![Word Cloud](images/cloud.png)
 
 ### 4. Topic Modelling with BERTopic
 
@@ -72,9 +77,19 @@ Raw BERTopic keyword labels go through a three-step refinement:
 ### 6. Topic Visualisation & Cross-Analysis
 
 - BERTopic built-in plots: topic similarity heatmap, intertopic distance map, hierarchy dendrograms, bar charts
+
+![Heirarchical clustering](images/heirarchy.png)
+
+![Topics](images/topics.png)
+
 - Topics over time — line plot of the top topics by month
 - Topic × Product heatmap — which topics dominate which product categories
 - Stacked bar breakdowns — topic composition by Product, Issue, Sub-issue, and full combo
+
+![Top Composition by product](images/topbar.png)
+
+![Top by label](images/topbylabel.png)
+
 - Per-topic word clouds — individual word clouds exported as PNG for each discovered topic
 
 ---
